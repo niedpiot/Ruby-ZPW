@@ -1,0 +1,8 @@
+<h1>Nowy bilet</h1>
+
+<%= render 'form', ticket: @ticket %>
+
+<%= link_to 'Powrót do strony głównej', events_path %>
+<%= link_to 'Lista biletów', tickets_path %>
+
+

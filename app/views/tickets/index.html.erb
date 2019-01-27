@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="display 4" style="text-align:center"><b>Bilety</b></h1>
+
+<%= render 'list', tickets: @tickets %>
+
+<br>
+
+<div class="btn btn-warning">
+	<%= link_to 'Powrót do strony głównej', events_path %>
+</div>
+
+<div class="btn btn-warning">
+	<%= link_to 'Nowy bilet', new_ticket_path %>
+</div>

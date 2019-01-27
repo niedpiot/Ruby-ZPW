@@ -1,0 +1,11 @@
+<h1>Edycja biletu</h1>
+
+<%= render 'form', ticket: @ticket %>
+
+<div class="btn btn-warning">
+	<%= link_to 'Show', @ticket %>
+</div>
+
+<div class="btn btn-warning">
+	<%= link_to 'Back', tickets_path %>
+</div>

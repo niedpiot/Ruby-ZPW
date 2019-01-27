@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <span class="label label-default"><strong>Artysta:</strong><span>
+   <span style="color:yellow"><%= @event.artist %><span>
+</h3>
+
+<h3>
+  <span class="label label-default"><strong>Opis:</strong><span>
+  <span style="color:yellow"> <%= @event.description %><span>
+</h3>
+
+<h3>
+  <span class="label label-default"><strong>Cena minimalna:</strong><span>
+   <span style="color:yellow"><%= @event.price_low %><span>
+</h3>
+
+<h3>
+  <span class="label label-default"><strong>Cena maksymalna:</strong><span>
+   <span style="color:yellow"><%= @event.price_high %><span>
+</h3>
+
+<h3>
+  <span class="label label-default"><strong>Data:</strong><span>
+  <span style="color:yellow"><%= @event.event_date %><span>
+</h3>
+
+<br>
+
+<h2 class="display 4" style="text-align:center"><b>Bilety</b></h2>
+<%= render 'tickets/list', tickets: @tickets %>
+
+<div class="btn btn-warning">
+<%= link_to 'Powrót do strony głównej', events_path %>
+</div>
+
+<div class="btn btn-warning">
+	<%= link_to 'Nowy bilet', new_ticket_path%>
+</div>
+

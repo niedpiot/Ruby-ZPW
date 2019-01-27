@@ -1,0 +1,15 @@
+<h1 class="display 4" style="text-align: center; left:50%"><b>Wszystkie wydarzenia</b></h1>
+
+<ul class="list-group">
+    <% @events.each do |event| %>
+        <li class="list-group-item list-group-item-info" style="text-align: center"><%= link_to event.artist, "/events/#{event.id}" %></li>
+    <% end %>
+</ul>
+
+<div class="btn btn-warning">
+  <%= link_to 'Nowe wydarzenie', new_event_path, :class => "btn"%> 
+</div>
+
+<div class="btn btn-warning">
+	<%= link_to 'Nowy bilet', new_ticket_path, :class => "btn" %>
+</div>

@@ -1,0 +1,38 @@
+<h1 class="display 4" style="text-align: center;"><b>Nowe wydarzenie<b></h1>
+<%= form_with(model: @event, local: true) do |form| %>
+  <%= render 'shared/errors', record: @event %>
+	<form>
+    <div class="form-group" style="">
+    <%= form.label 'Nazwa artysty' %>
+    <%= form.text_field :artist %>
+  	 </div>
+
+    <div class="form-group">
+    <%= form.label 'Krótki opis'%>
+    <%= form.text_area :description %>
+    </div>
+
+    <div class="form-group">
+    <%= form.label 'Cena minimalna' %>
+    <%= form.text_field :price_low %>
+    </div>
+
+   <div class="form-group">
+    <%= form.label 'Cena maksymalna' %>
+    <%= form.text_field :price_high %>
+   </div>
+
+    <div class="form-group">
+    <%= form.label 'Data' %>
+    <%= form.date_field :event_date %>
+    </div>
+
+  <div class="btn btn-success" style="color: black">
+    <%= form.submit 'Utwórz' %>
+  </div>
+<% end %>
+
+</form>
+<div class="btn btn-warning">
+<%= link_to 'Powrót do strony głównej', events_path %>
+</div>

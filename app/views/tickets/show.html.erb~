@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Imię:</strong>
+  <%= @ticket.name %>
+</p>
+
+<p>
+  <strong>Numer miejsca:</strong>
+  <%= @ticket.seat_id_seq %>
+</p>
+
+<p>
+  <strong>Adres:</strong>
+  <%= @ticket.address %>
+</p>
+
+<p>
+  <strong>Cena:</strong>
+  <%= @ticket.price %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @ticket.email_address %>
+</p>
+
+<p>
+  <strong>Numer telefonu:</strong>
+  <%= @ticket.phone %>
+</p>
+
+<% if @ticket.user == current_user %>
+	<div class="btn btn-warning">
+  		<%= link_to 'Edytuj', edit_ticket_path(@ticket) %>
+  	</div> |
+<% end %>
+<div class="btn btn-warning">
+	<%= link_to 'Powrót do listy', tickets_path %>
+</div> |
+<% if @ticket.event %>
+	<div class="btn btn-warning">
+  		<%= link_to 'Wydarzenie', event_path(@ticket.event) %>
+  	</div>
+<% end %>

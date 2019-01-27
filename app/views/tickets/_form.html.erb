@@ -1,0 +1,49 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+  <%= render 'shared/errors', record: ticket %>
+
+  <div class="field">
+    <%= form.label 'Imię' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Numer miejsca' %>
+    <%= form.text_field :seat_id_seq %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Adres' %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Cena' %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Email' %>
+    <%= form.text_field :email_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Numer telefonu' %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label 'Wydarzenie' %>
+    <%= form.collection_select(:event_id, Event.all, :id, :artist) %>
+  </div>
+
+  <div>
+    <%= form.label 'Użytkownik' %>
+    <%= form.collection_select(:user_id, User.all, :id, :email) %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= form.submit 'Utwórz' %>
+  </div>
+<% end %>
